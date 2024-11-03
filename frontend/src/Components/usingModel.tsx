@@ -7,18 +7,6 @@ interface UploadModalProps {
 const UploadModal: React.FC<UploadModalProps> = ({ onClose }) => {
   const [files, setFiles] = useState<FileList | null>(null);
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setFiles(event.target.files);
-      // Handle file upload logic here
-      console.log(event.target.files);
-    }
-  };
-
-  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-  };
-
  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
       setFiles(event.target.files);
@@ -31,6 +19,23 @@ const UploadModal: React.FC<UploadModalProps> = ({ onClose }) => {
       }
     }
   };
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+  };
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    if (event.dataTransfer.files) {
+      setFiles(event.dataTransfer.files);
+      // Handle file upload logic here
+      const uploadedFiles = event.dataTransfer.files;
+      for (let i = 0; i < uploadedFiles.length; i++) {
+        const file = uploadedFiles[i];
+        console.log(`File ${i + 1}: ${file.name}, ${file.size} bytes, ${file.type}`);
+        // Add further processing logic here (e.g., upload to server, validate file type/size, etc.)
+      }
+    }
+  };
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
