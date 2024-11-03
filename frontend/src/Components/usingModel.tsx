@@ -42,17 +42,17 @@ const UploadModal: React.FC<UploadModalProps> = ({ onClose }) => {
       <div className="bg-white p-6 rounded-lg text-center">
         <h2 className="text-xl mb-4">Upload Data</h2>
         <div
-          className="border-2 border-dashed border-blue-500 p-4 rounded-lg mb-4"
+          className="border-2 border-dashed border-purple-500 p-4 rounded-lg mb-4"
           onDragOver={handleDragOver}
           onDrop={handleDrop}
         >
           Drag and drop files here or
           <input type="file" onChange={handleFileUpload} className="hidden" id="fileInput" />
-          <label htmlFor="fileInput" className="text-blue-500 cursor-pointer ml-2">select files</label>
+          <label htmlFor="fileInput" className="text-purple-500 cursor-pointer ml-2">select files</label>
         </div>
         <div className="flex justify-around">
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+            className="px-4 py-2 bg-purple-500 text-white rounded hover:bg-blue-700"
             onClick={onClose}
           >
             Continue
