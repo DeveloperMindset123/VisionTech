@@ -19,12 +19,16 @@ const UploadModal: React.FC<UploadModalProps> = ({ onClose }) => {
     event.preventDefault();
   };
 
-  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    if (event.dataTransfer.files) {
-      setFiles(event.dataTransfer.files);
+ const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files) {
+      setFiles(event.target.files);
       // Handle file upload logic here
-      console.log(event.dataTransfer.files);
+      const uploadedFiles = event.target.files;
+      for (let i = 0; i < uploadedFiles.length; i++) {
+        const file = uploadedFiles[i];
+        console.log(`File ${i + 1}: ${file.name}, ${file.size} bytes, ${file.type}`);
+        // Add further processing logic here (e.g., upload to server, validate file type/size, etc.)
+      }
     }
   };
 
