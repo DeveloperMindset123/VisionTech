@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function LandingBodyContext() {
   return (
-    <div className="flex flex-row flex-grow mt-12">
+    <div className="grid gap-64 gap-x-64 my-32 grid-cols-2">
       <div className="text-purple-900 text-9xl p-16 mx-20">
         Vision Tech
         <div className="text-7xl w-[600px] p-8 text-[#c5a2f4]">
@@ -14,7 +14,7 @@ export default function LandingBodyContext() {
         </div>
       </div>
       <Image
-        className="w-[800px] ml-[700px]"
+        className="w-[800px]"
         src="/Group.png"
         width={900}
         height={200}

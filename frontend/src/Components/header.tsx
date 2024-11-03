@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import manImage from "../public/man.png";
-import monkeImage from "../public/monke.png";
+//import manImage from "../public/man.png";
+//import monkeImage from "../public/monke.png";
 
 interface HeaderProps {
   isModalOpen: boolean;
@@ -18,7 +17,8 @@ const Header: React.FC<HeaderProps> = ({ isModalOpen }) => {
       <Image src="/piggy-bank.png" alt="Piggy Bank" width={40} height={40} />
       <h1 className="text-2xl font-bold">Vision Tech</h1>
       <Image
-        src={manImage}
+        // should be fixed now
+        src="/man.png"
         alt="Man"
         width={40}
         height={40}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { itim } from "@/styles/fonts";
+//import LoginModal from "@/Components/signinModal";
 import "./globals.css";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -15,7 +16,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-("");
+//("");
 
 export const metadata: Metadata = {
   title: "Create Next App",
