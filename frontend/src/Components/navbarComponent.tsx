@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 //import SigninModal from "./signinModal";
-import LoginModal from "./signinModal";
+//import LoginModal from "./signinModal";
 import {
   Dialog,
   DialogContent,
@@ -10,6 +10,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
 
 export default function NavbarComponent() {
   return (
@@ -33,10 +35,22 @@ export default function NavbarComponent() {
           <DialogTrigger>Get Started</DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Sign In</DialogTitle>
+              <DialogTitle className="text-4xl mx-3">Sign In</DialogTitle>
               <DialogDescription>
-                This action cannot be undone. This will permanently delete your
-                account and remove your data from our servers.
+                <Input
+                  // twMerge allows us to pass in css directly into components
+                  className="my-5 text-xl"
+                  placeholder="Enter your Email..."
+                />
+                <Input
+                  type="password"
+                  placeholder="Enter Your Password..."
+                  // twMerge allows us to pass in css directly into components
+                  className="my-5 text-xl"
+                />
+                <Button className="mx-auto items-center justify-center w-full h-12">
+                  Sign In
+                </Button>
               </DialogDescription>
             </DialogHeader>
           </DialogContent>
